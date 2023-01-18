@@ -18,7 +18,10 @@ function App() {
       <h3>Quiz App</h3>
       <button onClick={startTrivia}>Start</button>
       <p>Score:</p>
-      <QuestionCard />
+      <QuestionCard
+        questionsNum={number + 1}
+        totalQuestions={TOTAL_QUESTIONS}
+      />
       <button onClick={nextQuestion}>Next Question</button>
     </div>
   );
