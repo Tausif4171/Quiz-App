@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import { QuestionCard } from "./components/QuestionCard";
+import { fetchQuizQuestions } from "./Api";
+// Types
+import { Difficulty } from "./Api";
+
 const TOTAL_QUESTIONS = 10;
 function App() {
+  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [number, setNumber] = useState(0);
@@ -13,6 +18,7 @@ function App() {
   const startTrivia = async () => {};
   const checkAnswer = () => {};
   const nextQuestion = () => {};
+
   return (
     <div className="App">
       <h3>Quiz App</h3>
