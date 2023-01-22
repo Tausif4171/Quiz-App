@@ -1,3 +1,4 @@
 export const shuffleArray = (array: any[]) => {
-  [...array].sort(() => Math.random() - 0.5);
+  const test = [...array].sort(() => Math.random() - 0.5);
+  console.log({ test });
 };

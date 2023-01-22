@@ -1,3 +1,5 @@
+import { shuffleArray } from "./utils";
+
 export type Question = {
   category: string;
   correct_answer: string;
@@ -20,5 +22,5 @@ export const fetchQuizQuestions = async (
   const endPoint = `https://opentdb.com/api.php?amount=${amount}&category=27&difficulty=${difficulty}&type=multiple`;
   const data = await (await fetch(endPoint)).json();
   console.log({ amount }, { difficulty });
-  console.log({ data });
+  console.log({ data }, { shuffleArray: shuffleArray });
 };
