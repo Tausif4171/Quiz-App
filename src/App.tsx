@@ -7,7 +7,8 @@ import { Difficulty } from "./Api";
 
 const TOTAL_QUESTIONS = 10;
 function App() {
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
+  const output = fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
+  console.log({ output });
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [number, setNumber] = useState(0);
