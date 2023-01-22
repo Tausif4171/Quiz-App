@@ -7,6 +7,7 @@ export type Question = {
   incorrect_answers: string[];
   question: string;
   type: string;
+  test: string;
 };
 
 export enum Difficulty {
@@ -23,4 +24,16 @@ export const fetchQuizQuestions = async (
   const data = await (await fetch(endPoint)).json();
   console.log({ amount }, { difficulty });
   console.log({ data }, { shuffleArray: shuffleArray });
+  return data.results.map((question: Question) => {
+    console.log({ question });
+    const result = {
+      ...question,
+      answers: shuffleArray([
+        ...question.incorrect_answers,
+        question.correct_answer,
+      ]),
+    };
+    console.log({ result });
+    return result;
+  });
 };
