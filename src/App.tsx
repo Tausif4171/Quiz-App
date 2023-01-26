@@ -6,13 +6,19 @@ import { fetchQuizQuestions } from "./Api";
 import { questionState, Difficulty } from "./Api";
 
 const TOTAL_QUESTIONS = 10;
+type AnswerObject = {
+  question: string;
+  userAnswer: string;
+  correct: boolean;
+  correctAnswer: string;
+};
 function App() {
   const output = fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
   console.log({ output });
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<questionState[]>([]);
   const [number, setNumber] = useState(0);
-  const [userAnswers, setUserAnswers] = useState([]);
+  const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
