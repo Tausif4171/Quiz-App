@@ -3,14 +3,14 @@ import "./App.css";
 import { QuestionCard } from "./components/QuestionCard";
 import { fetchQuizQuestions } from "./Api";
 // Types
-import { Difficulty } from "./Api";
+import { questionState, Difficulty } from "./Api";
 
 const TOTAL_QUESTIONS = 10;
 function App() {
   const output = fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
   console.log({ output });
   const [loading, setLoading] = useState(false);
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState<questionState[]>([]);
   const [number, setNumber] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
