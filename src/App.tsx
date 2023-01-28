@@ -43,9 +43,9 @@ function App() {
     <div className="App">
       <h3>Quiz App</h3>
       {gameOver ? <button onClick={startTrivia}>Start</button> : null}
-
       {!gameOver ? <p>Score:</p> : null}
-      {loading ? <p>Loading Questions...</p> : null}
+      {/* short-circuit operator */}
+      {loading && <p>Loading Questions...</p>}
       <QuestionCard
         questionsNum={number + 1}
         totalQuestions={TOTAL_QUESTIONS}
