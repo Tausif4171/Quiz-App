@@ -44,7 +44,7 @@ function App() {
       <h3>Quiz App</h3>
       {gameOver ? <button onClick={startTrivia}>Start</button> : null}
 
-      <p>Score:</p>
+      {!gameOver ? <p>Score:</p> : null}
       <QuestionCard
         questionsNum={number + 1}
         totalQuestions={TOTAL_QUESTIONS}
