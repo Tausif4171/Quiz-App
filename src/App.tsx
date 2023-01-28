@@ -21,8 +21,21 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  console.log({ questions });
 
-  const startTrivia = async () => {};
+  const startTrivia = async () => {
+    setLoading(true);
+    setGameOver(false);
+    const newQuestions = await fetchQuizQuestions(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY,
+    );
+    setQuestions(newQuestions);
+    setScore(0);
+    setNumber(0);
+    setUserAnswers([]);
+    setLoading(false);
+  };
   const checkAnswer = () => {};
   const nextQuestion = () => {};
 
