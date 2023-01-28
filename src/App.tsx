@@ -46,10 +46,12 @@ function App() {
       {!gameOver ? <p>Score:</p> : null}
       {/* short-circuit operator */}
       {loading && <p>Loading Questions...</p>}
-      <QuestionCard
-        questionsNum={number + 1}
-        totalQuestions={TOTAL_QUESTIONS}
-      />
+      {!loading && !gameOver && (
+        <QuestionCard
+          questionsNum={number + 1}
+          totalQuestions={TOTAL_QUESTIONS}
+        />
+      )}
       <button onClick={nextQuestion}>Next Question</button>
     </div>
   );
