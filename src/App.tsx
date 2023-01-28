@@ -42,7 +42,8 @@ function App() {
   return (
     <div className="App">
       <h3>Quiz App</h3>
-      <button onClick={startTrivia}>Start</button>
+      {gameOver ? <button onClick={startTrivia}>Start</button> : null}
+
       <p>Score:</p>
       <QuestionCard
         questionsNum={number + 1}
