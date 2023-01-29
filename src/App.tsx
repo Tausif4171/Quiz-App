@@ -50,6 +50,8 @@ function App() {
         <QuestionCard
           questionsNum={number + 1}
           totalQuestions={TOTAL_QUESTIONS}
+          question={questions[number].question}
+          answers={questions[number].answers}
         />
       )}
       {!loading && !gameOver && (
