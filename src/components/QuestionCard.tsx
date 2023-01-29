@@ -13,9 +13,23 @@ export const QuestionCard: React.FC<Props> = ({
   question,
   answers,
 }) => {
+  console.log({ questionsNum }, { totalQuestions }, { question }, { answers });
   return (
     <>
       <div>Question Card</div>
+      <p>
+        Question : {questionsNum} / {totalQuestions}
+      </p>
+      <p>{question}</p>
+
+      {answers.map((answer) => {
+        return (
+          <>
+            <button>{answer}</button>
+            <br />
+          </>
+        );
+      })}
     </>
   );
 };
