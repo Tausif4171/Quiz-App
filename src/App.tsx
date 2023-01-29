@@ -54,7 +54,7 @@ function App() {
           answers={questions[number].answers}
         />
       )}
-      {!loading && !gameOver && (
+      {!loading && !gameOver && userAnswers.length === number + 1 && (
         <button onClick={nextQuestion}>Next Question</button>
       )}
     </div>
