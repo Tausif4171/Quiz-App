@@ -24,10 +24,10 @@ export const QuestionCard: React.FC<Props> = ({
 
       {answers.map((answer) => {
         return (
-          <>
+          <div key={answer}>
             <button>{answer}</button>
             <br />
-          </>
+          </div>
         );
       })}
     </>
