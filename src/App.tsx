@@ -52,7 +52,9 @@ function App() {
           totalQuestions={TOTAL_QUESTIONS}
         />
       )}
-      <button onClick={nextQuestion}>Next Question</button>
+      {!loading && !gameOver && (
+        <button onClick={nextQuestion}>Next Question</button>
+      )}
     </div>
   );
 }
