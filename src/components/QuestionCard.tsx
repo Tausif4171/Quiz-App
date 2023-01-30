@@ -26,8 +26,10 @@ export const QuestionCard: React.FC<Props> = ({
 
       {answers.map((answer) => {
         return (
-          <div key={answer} value={answer} onClick={callBack}>
-            <button>{answer}</button>
+          <div key={answer}>
+            <button value={answer} onClick={callBack}>
+              {answer}
+            </button>
             <br />
           </div>
         );
