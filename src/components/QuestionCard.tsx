@@ -5,6 +5,7 @@ type Props = {
   totalQuestions: number;
   question: string;
   answers: string[];
+  callBack: any;
 };
 
 export const QuestionCard: React.FC<Props> = ({
@@ -12,6 +13,7 @@ export const QuestionCard: React.FC<Props> = ({
   totalQuestions,
   question,
   answers,
+  callBack,
 }) => {
   console.log({ questionsNum }, { totalQuestions }, { question }, { answers });
   return (
@@ -24,7 +26,7 @@ export const QuestionCard: React.FC<Props> = ({
 
       {answers.map((answer) => {
         return (
-          <div key={answer}>
+          <div key={answer} value={answer} onClick={callBack}>
             <button>{answer}</button>
             <br />
           </div>

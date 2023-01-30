@@ -36,7 +36,9 @@ function App() {
     setUserAnswers([]);
     setLoading(false);
   };
-  const checkAnswer = () => {};
+  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const answer = e.currentTarget.value;
+  };
   const nextQuestion = () => {};
 
   return (
@@ -52,6 +54,7 @@ function App() {
           totalQuestions={TOTAL_QUESTIONS}
           question={questions[number].question}
           answers={questions[number].answers}
+          callBack={checkAnswer}
         />
       )}
       {!loading && !gameOver && userAnswers.length === number + 1 && (
