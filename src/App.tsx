@@ -21,7 +21,7 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  console.log({ questions });
+  console.log({ questions }, { score }, { userAnswers });
 
   const startTrivia = async () => {
     setLoading(true);
@@ -48,6 +48,14 @@ function App() {
       if (correct) {
         setScore((prev) => prev + 1);
       }
+      // save answer in the userAnswers array
+      const answerObject = {
+        question: questions[number].question,
+        userAnswer: answer,
+        correct,
+        correctAnswer: questions[number].correct_answer,
+      };
+      setUserAnswers((prev) => [...prev, answerObject]);
     }
   };
   const nextQuestion = () => {};
