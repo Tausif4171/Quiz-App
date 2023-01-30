@@ -37,7 +37,14 @@ function App() {
     setLoading(false);
   };
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const answer = e.currentTarget.value;
+    if (!gameOver) {
+      // userAnswers
+      const answer = e.currentTarget.value;
+      console.log({ answer });
+      // check answer against correct answer
+      const correct = questions[number].correct_answer === answer;
+      console.log(correct);
+    }
   };
   const nextQuestion = () => {};
 
