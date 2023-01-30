@@ -44,6 +44,10 @@ function App() {
       // check answer against correct answer
       const correct = questions[number].correct_answer === answer;
       console.log(correct);
+      // add score if answer is correct
+      if (correct) {
+        setScore((prev) => prev + 1);
+      }
     }
   };
   const nextQuestion = () => {};
