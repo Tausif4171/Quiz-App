@@ -85,9 +85,12 @@ function App() {
           callBack={checkAnswer}
         />
       )}
-      {!loading && !gameOver && userAnswers.length === number + 1 && (
-        <button onClick={nextQuestion}>Next Question</button>
-      )}
+      {!loading &&
+        !gameOver &&
+        userAnswers.length === number + 1 &&
+        number !== TOTAL_QUESTIONS - 1 && (
+          <button onClick={nextQuestion}>Next Question</button>
+        )}
     </div>
   );
 }
