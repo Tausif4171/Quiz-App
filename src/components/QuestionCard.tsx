@@ -22,7 +22,7 @@ export const QuestionCard: React.FC<Props> = ({
       <p>
         Question : {questionsNum} / {totalQuestions}
       </p>
-      <p>{question}</p>
+      <h3>{question}</h3>
 
       {answers.map((answer) => {
         return (
