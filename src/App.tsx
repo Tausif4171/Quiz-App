@@ -86,6 +86,7 @@ function App() {
           callBack={checkAnswer}
         />
       )}
+      <br />
       {!loading &&
         !gameOver &&
         userAnswers.length === number + 1 &&
